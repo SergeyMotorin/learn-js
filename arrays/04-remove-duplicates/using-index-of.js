@@ -1,5 +1,5 @@
 
-// Implementation of the function using Array.filter()
+// Implementation of the method using Array.filter() and Array.indexOf() 
 
 Array.prototype.removeDuplicates = function() {
     return this.filter(

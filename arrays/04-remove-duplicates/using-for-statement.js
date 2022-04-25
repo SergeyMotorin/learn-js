@@ -1,5 +1,5 @@
 
-// Implementation of the function using the for statement
+// Implementation of the method using the for statement
 
 Array.prototype.removeDuplicates = function() {
     var result = []
