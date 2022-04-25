@@ -3,9 +3,7 @@
 
 Array.prototype.removeDuplicates = function() {
     return this.filter(
-        (item, index) => {
-            return this.indexOf(item) === index
-        }
+        (item, index) => this.indexOf(item) === index
     )
 }
 
