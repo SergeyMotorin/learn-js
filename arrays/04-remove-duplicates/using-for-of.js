@@ -1,7 +1,7 @@
 
 // Implementation of the method using ES6 for-of
 
-if (!Array.prototype.removeDuplicates) {
+if (!Object.prototype.hasOwnProperty.call(Array, 'removeDuplicates')) {
     Object.defineProperty(Array.prototype, 'removeDuplicates', {
         value: function() {
             var result = []
