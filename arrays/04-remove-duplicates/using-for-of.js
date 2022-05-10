@@ -1,24 +1,26 @@
 
 // Implementation of the method using ES6 for-of
 
-if (!Object.prototype.hasOwnProperty.call(Array, 'removeDuplicates')) {
-    Object.defineProperty(Array.prototype, 'removeDuplicates', {
-        value: function() {
-            var result = []
-                    
-            // Loop through array values
-            for (const value of this) {
-                if (result.indexOf(value) === -1) {
-                    result.push(value)
-                }
-            }
-            
-            return result
+if (!Array.prototype.removeDuplicates) {
+  Object.defineProperty(Array.prototype, "removeDuplicates", {
+    value: function () {
+      var result = []
+      
+      // Loop through array values
+      for (const value of this) {
+        if (result.indexOf(value) === -1) {
+          result.push(value)
         }
-    })
+      }
+
+      return result
+    }
+  });
 }
 
-const data = [ 30, 10, 10, 20, 10, 20, 30 ]
+const fruits = [ "🍊", "🍐", "🍐", "🍌", "🍌", "🍌", "🍏", "🍊" ]
 
-const newData = data.removeDuplicates()
-console.log(newData)
+const newFruits = fruits.removeDuplicates()
+
+console.log(newFruits)
+// Output: [ "🍊", "🍐", "🍌", "🍏" ]

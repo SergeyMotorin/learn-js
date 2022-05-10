@@ -1,13 +1,19 @@
 
 // Implementation of the method using Array.filter() and Array.indexOf() 
 
-Array.prototype.removeDuplicates = function() {
-    return this.filter(
+if (!Array.prototype.removeDuplicates) {
+  Object.defineProperty(Array.prototype, "removeDuplicates", {
+    value: function () {
+      return this.filter(
         (item, index) => this.indexOf(item) === index
-    )
+      )
+    },
+  });
 }
 
-const data = [ 30, 10, 10, 20, 10, 20, 30 ]
+const fruits = [ "🍊", "🍐", "🍐", "🍌", "🍌", "🍌", "🍏", "🍊" ]
+  
+const newFruits = fruits.removeDuplicates()
 
-const newData = data.removeDuplicates()
-console.log(newData)
+console.log(newFruits)
+// Output: [ "🍊", "🍐", "🍌", "🍏" ]
